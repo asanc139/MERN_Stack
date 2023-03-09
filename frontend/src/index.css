@@ -41,6 +41,10 @@ main {
   max-width: 400px;
 }
 
+.card-img-top {
+  height: 224px;
+}
+
 .product-info {
   padding: 1rem;
 }

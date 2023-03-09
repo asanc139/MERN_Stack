@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom';
 
 export default function SearchBox() {
   const navigate = useNavigate();
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState('');
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate(query ? `/search/?query={query}` : '/search');
+    navigate(query ? `/search/?query=${query}` : '/search');
   };
 
   return (
@@ -21,14 +21,13 @@ export default function SearchBox() {
           name="q"
           id="q"
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="search for treasure..."
+          placeholder="search products..."
           aria-label="Search Products"
           aria-describedby="button-search"
-        >
-          <Button variant="outline-primary" type="submit" id="button-search">
-            <i className="fas fa-search"></i>
-          </Button>
-        </FormControl>
+        ></FormControl>
+        <Button variant="outline-primary" type="submit" id="button-search">
+          <i className="fas fa-search"></i>
+        </Button>
       </InputGroup>
     </Form>
   );
