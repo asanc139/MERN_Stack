@@ -74,7 +74,7 @@ function App() {
                 <i className="fas fa-bars"></i>
               </Button>
               <LinkContainer to="/">
-                <Navbar.Brand>Nostalgia</Navbar.Brand>
+                <Navbar.Brand className="nostalgia">Nostalgia</Navbar.Brand>
               </LinkContainer>
 
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -129,7 +129,7 @@ function App() {
         >
           <Nav className="flex-column text-white w-100 p-2">
             <Nav.Item>
-              <strong>Categories</strong>
+              <strong className="categories">Categories</strong>
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
